@@ -4,8 +4,7 @@ namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
-class Kernel extends HttpKernel
-{
+class Kernel extends HttpKernel {
     /**
      * The application's global HTTP middleware stack.
      *
@@ -13,12 +12,14 @@ class Kernel extends HttpKernel
      *
      * @var array
      */
+    // グローバルミドルウェアの登録
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\TrustProxies::class,
+        \App\Http\Middleware\HelloMiddleware::class,
     ];
 
     /**
@@ -26,7 +27,9 @@ class Kernel extends HttpKernel
      *
      * @var array
      */
+    // 複数のミドルウェアを一つにまとめて管理を楽にする
     protected $middlewareGroups = [
+        // web・apiがグループ
         'web' => [
             \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
@@ -40,6 +43,9 @@ class Kernel extends HttpKernel
         'api' => [
             'throttle:60,1',
             'bindings',
+        ],
+        'helo' => [
+            \App\Http\Middleware\HelloMiddleware::class,
         ],
     ];
 

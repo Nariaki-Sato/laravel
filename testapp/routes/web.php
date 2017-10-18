@@ -5,6 +5,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+use App\Http\Middleware\HelloMiddleware;
+
 # Hello page '/hello'
 Route::get('hello', 'HelloController@index');
 Route::post('hello', 'HelloController@post');
+
+
