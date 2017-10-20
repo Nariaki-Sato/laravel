@@ -7,24 +7,27 @@ use Illuminate\Foundation\Http\Kernel as HttpKernel;
 class Kernel extends HttpKernel {
     /**
      * The application's global HTTP middleware stack.
-     *
      * These middleware are run during every request to your application.
-     *
      * @var array
      */
+
     // グローバルミドルウェアの登録
+    // 全てのアクセスで自動的にミドルウェアが実行されるようにしたいとき
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\TrustProxies::class,
-        \App\Http\Middleware\HelloMiddleware::class,
+
+        // 追記したミドルウェア
+        // \App\Http\Middleware\HelloMiddleware::class,
+
+        // \App\Http\Middleware\MyMiddleware::class,
     ];
 
     /**
      * The application's route middleware groups.
-     *
      * @var array
      */
     // 複数のミドルウェアを一つにまとめて管理を楽にする
@@ -44,18 +47,14 @@ class Kernel extends HttpKernel {
             'throttle:60,1',
             'bindings',
         ],
-        'helo' => [
-            \App\Http\Middleware\HelloMiddleware::class,
-        ],
     ];
 
     /**
      * The application's route middleware.
-     *
      * These middleware may be assigned to groups or used individually.
-     *
      * @var array
      */
+    // 特定のルートのみに対してミドルウェアを指定したい場合
     protected $routeMiddleware = [
         'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
@@ -64,4 +63,6 @@ class Kernel extends HttpKernel {
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     ];
+
+
 }
