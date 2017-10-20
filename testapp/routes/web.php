@@ -14,6 +14,13 @@ use App\Http\Middleware\MyMiddleware;
 
 ### Practice
 
+#database
+Route::get('practice/db', 'Mycontroller@db');
+
+#cookie
+Route::get('practice/cookie', 'MyController@cookie');
+Route::post('practice/cookie', 'MyController@post_cookie');
+
 #child
 Route::get('practice/child', 'MyController@child')->middleware(MyMiddleware::class);
 

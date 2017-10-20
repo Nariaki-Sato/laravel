@@ -13,7 +13,10 @@ return [
     |
     */
 
+    ### デフォルトのデータベースをmysqlからsqliteに変更
+
     'default' => env('DB_CONNECTION', 'mysql'),
+//    'default' => env('DB_CONNECTION', 'sqlite'),
 
     /*
     |--------------------------------------------------------------------------
