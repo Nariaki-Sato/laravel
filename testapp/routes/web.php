@@ -15,7 +15,7 @@ use App\Http\Middleware\MyMiddleware;
 ### Practice
 
 #database
-Route::get('practice/db', 'Mycontroller@db');
+Route::get('practice/database', 'Mycontroller@database');
 
 #cookie
 Route::get('practice/cookie', 'MyController@cookie');

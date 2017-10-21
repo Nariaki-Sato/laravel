@@ -14,17 +14,10 @@ use Illuminate\Support\Facades\DB; # DBクラスを利用
 
 class MyController extends Controller {
 
-    public function db(Request $request) {
-        $items = DB::select('select * from people');
-        return view('practice/db', ['items' => $items]);
+    public function database(Request $request) {
+        $items = DB::select('select * from member');
+        return view('practice/database', ['items' => $items]);
     }
-
-
-
-
-
-
-
 
     public function cookie(Request $request) {
         if($request->hasCookie('msg')) {
