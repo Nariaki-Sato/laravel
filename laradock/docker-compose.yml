@@ -7,9 +7,10 @@ services:
     applications:
       image: tianon/true
       volumes:
+           ## 変更前
            #- ${APPLICATION}:/var/www
+           ## 変更後
            - ../testapp/:/var/www/testapp
-
 ### Workspace Utilities Container ###########################
 
     workspace:
@@ -133,9 +134,13 @@ services:
         - ${NGINX_HOST_LOG_PATH}:/var/log/nginx
         - ${NGINX_SITES_PATH}:/etc/nginx/sites-available
       ports:
+         ## 変更前
          #- "${NGINX_HOST_HTTP_PORT}:80"
+         ## 変更後
          - "8080:80"
+         ## 変更前
          #- "${NGINX_HOST_HTTPS_PORT}:443"
+         ## 変更後
          - "443:443"
       depends_on:
         - php-fpm
@@ -640,6 +645,18 @@ services:
         - /var/run/docker.sock:/var/run/docker.sock
       networks:
         - frontend
+        - backend
+
+### Grafana Container #########################################
+
+    grafana:
+      build:
+        context: ./grafana
+      volumes:
+        - ${DATA_SAVE_PATH}/grafana:/var/lib/grafana
+      ports:
+        - "${GRAFANA_PORT}:3000"
+      networks:
         - backend
 
 ### Laravel Echo Server #######################################

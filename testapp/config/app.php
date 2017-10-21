@@ -136,10 +136,11 @@ return [
     |
     */
 
-    # Laravel Framework Service Providers...
-    // サービスプロバイダのアプリケーションへの登録はここに行う
-    // 178行目あたりに追加した
     'providers' => [
+
+        /*
+         * Laravel Framework Service Providers...
+         */
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
@@ -176,9 +177,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        // 自分で登録したサービスプロバイダ
-        App\Providers\HelloServiceProvider::class,
-        App\Providers\MyServiceProvider::class,
     ],
 
     /*
