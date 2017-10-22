@@ -1,23 +1,30 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers; # /routes/web.phpから飛んでくる
 
-use Validator;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-use App\Http\Requests\MyRequest; # フォームリクエストを用いたバリデーション
+use App\Http\Requests\MyRequest;    # フォームリクエストを用いたバリデーション
+use Validator;                      # Validatorクラスを利用
+use Illuminate\Support\Facades\DB;  # DBクラスを利用
 
-use Illuminate\Support\Facades\DB; # DBクラスを利用
-
-# /routes/web.phpから飛んでくる
 
 class MyController extends Controller {
 
-    public function database(Request $request) {
-        $items = DB::select('select * from member');
-        return view('practice/database', ['items' => $items]);
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public function cookie(Request $request) {
         if($request->hasCookie('msg')) {
@@ -43,18 +50,6 @@ class MyController extends Controller {
     }
 
     # Route::get('chapter2', 'MyController@index');
-
-    public function index(Request $request, $id='0') {
-        $data = [
-            'msg1' => 'This is my practice code.', # $msgとしてecho可能
-            'id' => $id, # $idとしてecho可能
-            'request' => $request,
-            'array' => ['one', 'two', 'three', 'four', 'five'],
-        ];
-
-        # /resources/view/practice/index.blade.phpへ
-        return view('practice.index', $data);
-    }
 
     public function post(Request $request) {
         $data = [
