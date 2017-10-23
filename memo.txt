@@ -1,9 +1,9 @@
 
+【メモ1 Laradockの環境変数の変更】
 
-=========================================
 /laradock/.env 変更前
 
-### MYSQL ##############################################################################################################
+### MYSQL ###############################
 
 MYSQL_VERSION=8.0
 MYSQL_DATABASE=default
@@ -15,7 +15,7 @@ MYSQL_ENTRYPOINT_INITDB=./mysql/docker-entrypoint-initdb.d
 
 /laradock/.env 変更後
 
-### MYSQL ##############################################################################################################
+### MYSQL ###############################
 
 MYSQL_VERSION=8.0
 MYSQL_DATABASE=testdb
@@ -26,6 +26,8 @@ MYSQL_ROOT_PASSWORD=root
 MYSQL_ENTRYPOINT_INITDB=./mysql/docker-entrypoint-initdb.d
 
 =========================================
+
+【メモ2 testappの環境変数の変更】
 
 /testapp/.env 変更前
 
@@ -44,3 +46,31 @@ DB_PORT=3306
 DB_DATABASE=testdb
 DB_USERNAME=root
 DB_PASSWORD=root
+
+
+=========================================
+
+【メモ3 Migratioin の実行について】
+
+php artisan migrate の実行はworkspaceのtestapp内から行う必要がある
+
+satounoMacBook-Pro:laradock satou$ docker exec -it laradock_workspace_1 bash
+
+root@26298629d4ed:/var/www# pwd
+/var/www
+
+root@26298629d4ed:/var/www# ls
+testapp
+
+root@26298629d4ed:/var/www# cd testapp/
+
+root@26298629d4ed:/var/www/testapp# php artisan migrate
+Migration table created successfully.
+Migrating: 2014_10_12_000000_create_users_table
+Migrated:  2014_10_12_000000_create_users_table
+Migrating: 2014_10_12_100000_create_password_resets_table
+Migrated:  2014_10_12_100000_create_password_resets_table
+Migrating: 2017_10_23_025814_create_stationery_table
+Migrated:  2017_10_23_025814_create_stationery_table
+
+=========================================

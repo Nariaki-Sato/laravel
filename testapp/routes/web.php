@@ -20,6 +20,10 @@ Route::get('user/search', 'UserController@search'); 		# Search
 
 # ===========================================================================
 
+# stationery
+Route::get('stationery', 'StationeryController@index'); 	# Index
+
+
 #database
 Route::get('practice', 'MyController@index');
 Route::get('practice/new', 'MyController@new');

@@ -11,16 +11,15 @@ class UserController extends Controller
 {
     # Index
     public function index() {
-        $users = DB::table('user')->get();
+        $users = DB::table('user')->get();  # getで全て取得
         $data = [ 'users' => $users ];
         return view('user/index', $data);
     }
 
     # Show
     public function show(Request $request) {
-    	$id = $request->id;
-        $user = DB::table('user')->where('id', $id)->first();
-    	$data = [ 'user' => $user ];
+        $user = DB::table('user')->where('id', $request->id)->first();
+    	$data = [ 'user' => $user, ];
     	return view('user/show', $data);
     }
 
@@ -36,15 +35,14 @@ class UserController extends Controller
             'sex' => $request->sex,
             'age' => $request->age,
         ];
-        DB::insert('insert into user (name, sex, age) values (:name, :sex, :age)', $params);
+        DB::table('user')->insert($params);
         return redirect('/user');
     }
 
     # Edit
     public function edit(Request $request) {
-    	$params = [ 'id' => $request->id ];
-    	$users = DB::select('select * from user where id = :id', $params);
-    	$data = [ 'user' => $users[0] ];
+        $user = DB::table('user')->where('id', $request->id)->first();
+        $data = [ 'user' => $user, ];
     	return view('user/edit', $data);
     }
 
@@ -56,7 +54,7 @@ class UserController extends Controller
     		'sex' => $request->sex,
     		'age' => $request->age,
     	];
-    	DB::update('update user set name =:name, sex =:sex, age =:age where id =:id', $params);
+        DB::table('user')->where('id', $request->id)->update($params);
     	return redirect('/user');
     }
 
@@ -78,8 +76,14 @@ class UserController extends Controller
         */
 
         ### 年齢を昇順に並べる
-        $users = DB::table('user')->orderBy('age', 'asc')->get();
+        $users = DB::table('user')
+            ->orderBy('age', 'asc')     # orderByで順序を並べ替え
+            ->offset(4)                 # offsetで5番目から表示させる
+            ->limit(3)                  # limitで部分的にレコードを表示
+            ->get();
         $data = ['users' => $users ];
         return view('user/search', $data);
+
+
     }
 }
