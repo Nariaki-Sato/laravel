@@ -74,3 +74,8 @@ Migrating: 2017_10_23_025814_create_stationery_table
 Migrated:  2017_10_23_025814_create_stationery_table
 
 =========================================
+
+【メモ4 Seeding の実行について】
+
+php artisan db:seed の前にDatabaseSeederに登録しておきましょう　
+

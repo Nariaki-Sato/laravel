@@ -5,6 +5,8 @@ use App\Http\Middleware\MyMiddleware;
 # Top page /resources/views/welcome.blade.phpを表示
 Route::get('/', function () { return view('welcome'); });
 
+# ===========================================================================
+
 ### Practice
 
 #user
@@ -15,7 +17,25 @@ Route::get('user/edit', 'UserController@edit');			# Edit
 Route::post('user/edit', 'UserController@update');		# Update
 
 Route::get('user/show', 'UserController@show'); 		# Show
-Route::get('user/search', 'UserController@search'); 		# Search
+Route::get('user/search', 'UserController@search'); 	# Search
+
+# people
+Route::get('people', 'PersonController@index'); 		    # Index
+Route::get('people/find', 'PersonController@find');		    # Find
+Route::post('people/find', 'PersonController@search');	    # Search
+Route::get('people/new', 'PersonController@new');		    # New
+Route::post('people/new', 'PersonController@create');	    # Create
+Route::get('people/edit', 'PersonController@edit');		    # Edit
+Route::post('people/edit', 'PersonController@update');	    # Update
+Route::get('people/delete', 'PersonController@delete');		# Delete
+Route::post('people/delete', 'PersonController@destroy');	# Destroy
+
+
+# boards
+
+Route::get('boards', 'BoardController@index'); 			# Index
+Route::get('boards/new', 'BoardController@new');        # New
+Route::post('boards/new', 'BoardController@create');	# Create
 
 
 # ===========================================================================
