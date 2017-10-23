@@ -13,7 +13,7 @@
     </tr>
     @foreach($users as $user)
     <tr>
-        <td><a href="/user/{{ $user->id }}">{{ $user->id }}</a></td>
+        <td><a href="/user/show?id={{ $user->id }}">{{ $user->id }}</a></td>
         <td>{{ $user->name }}</td>
         <td>{{ $user->sex }}</td>
         <td>{{ $user->age }}</td>

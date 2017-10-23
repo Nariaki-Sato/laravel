@@ -9,17 +9,18 @@ use Illuminate\Support\Facades\DB;  # DBクラスを利用
 
 class UserController extends Controller
 {
-		# Index
+    # Index
     public function index() {
-			$data = [ 'users' => DB::select('select * from user'), ];
-      return view('user/index', $data);
+        $users = DB::table('user')->get();
+        $data = [ 'users' => $users ];
+        return view('user/index', $data);
     }
 
-		# Show
+    # Show
     public function show(Request $request) {
-    	$params = [ 'id' => $request->id ];
-    	$users = DB::select('select * from user where id = :id', $params);
-    	$data = [ 'user' => $users[0] ];
+    	$id = $request->id;
+        $user = DB::table('user')->where('id', $id)->first();
+    	$data = [ 'user' => $user ];
     	return view('user/show', $data);
     }
 
@@ -59,12 +60,26 @@ class UserController extends Controller
     	return redirect('/user');
     }
 
-    # Destroy
-    public function destroy(Request $request) {
-    	$params = [ 'id' => $request->id ];
-    	DB::delete('delete from user where id =:id', $params);
-    	return redirect('/user');
 
+    # Search
+    public function search(Request $request) {
+
+        ### ID以下のデータを表示
+        /*
+        $id = $request->id;
+        $users = DB::table('user')->where('id', '<=', $id)->get();
+        */
+
+        ### 年齢の最小・最大以内のデータを表示
+        /*
+        $min = $request->min;
+        $max = $request->max;
+        $users = DB::table('user')->whereRaw('age >= ? and age <= ?', [$min, $max])->get();
+        */
+
+        ### 年齢を昇順に並べる
+        $users = DB::table('user')->orderBy('age', 'asc')->get();
+        $data = ['users' => $users ];
+        return view('user/search', $data);
     }
-
 }

@@ -8,16 +8,14 @@ Route::get('/', function () { return view('welcome'); });
 ### Practice
 
 #user
-Route::get('user', 'UserController@index'); 						# Index
-Route::get('user/new', 'UserController@new');						# New
-Route::post('user/new', 'UserController@create');				# Create
-Route::get('user/edit', 'UserController@edit');					# Edit
-Route::post('user/edit', 'UserController@update');			# Update
-Route::post('user/destroy', 'UserController@destroy');	# Destroy
+Route::get('user', 'UserController@index'); 			# Index
+Route::get('user/new', 'UserController@new');			# New
+Route::post('user/new', 'UserController@create');		# Create
+Route::get('user/edit', 'UserController@edit');			# Edit
+Route::post('user/edit', 'UserController@update');		# Update
 
-Route::get('user/{id?}', 'UserController@show'); 				# Show
-
-
+Route::get('user/show', 'UserController@show'); 		# Show
+Route::get('user/search', 'UserController@search'); 		# Search
 
 
 # ===========================================================================
