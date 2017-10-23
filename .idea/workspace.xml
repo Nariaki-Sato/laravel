@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d298cd82-dfee-4dd8-8354-36dfd2a7df5f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/testapp/resources/views/board/index.blade.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/testapp/resources/views/Stationery/index.blade.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/memo.txt" afterPath="$PROJECT_DIR$/memo.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testapp/database/seeds/DatabaseSeeder.php" afterPath="$PROJECT_DIR$/testapp/database/seeds/DatabaseSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testapp/resources/views/layouts/layout.blade.php" afterPath="$PROJECT_DIR$/testapp/resources/views/layouts/layout.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testapp/resources/views/user/index.blade.php" afterPath="$PROJECT_DIR$/testapp/resources/views/user/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testapp/routes/web.php" afterPath="$PROJECT_DIR$/testapp/routes/web.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.md" afterPath="$PROJECT_DIR$/readme.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -84,12 +77,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testapp/resources/views/board/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
               <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="readme.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/readme.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="225">
+                <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -134,7 +140,6 @@
         <option value="$PROJECT_DIR$/testapp/resources/views/user/search.blade.php" />
         <option value="$PROJECT_DIR$/testapp/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/testapp/database/migrations/2017_10_23_025814_create_stationery_table.php" />
-        <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/index.txt" />
         <option value="$PROJECT_DIR$/testapp/database/seeds/StationeryTableSeeder.php" />
         <option value="$PROJECT_DIR$/testapp/app/Http/Controllers/StationeryController.php" />
@@ -161,6 +166,7 @@
         <option value="$PROJECT_DIR$/testapp/resources/views/people/index.blade.php" />
         <option value="$PROJECT_DIR$/testapp/app/Http/Controllers/BoardController.php" />
         <option value="$PROJECT_DIR$/testapp/resources/views/board/index.blade.php" />
+        <option value="$PROJECT_DIR$/readme.md" />
       </list>
     </option>
   </component>
@@ -300,12 +306,12 @@
       <workItem from="1508719085205" duration="33000" />
       <workItem from="1508719120038" duration="40000" />
       <workItem from="1508719162603" duration="9000" />
-      <workItem from="1508719181434" duration="25193000" />
+      <workItem from="1508719181434" duration="25326000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44013000" />
+    <option name="totallyTimeSpent" value="44146000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2169" y="23" width="1031" height="1053" extended-state="0" />
@@ -461,17 +467,6 @@
         <state relative-caret-position="240">
           <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="135">
-            <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -744,6 +739,17 @@
         <state relative-caret-position="360">
           <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="225">
+            <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
