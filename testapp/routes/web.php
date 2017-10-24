@@ -37,6 +37,19 @@ Route::get('boards', 'BoardController@index'); 			# Index
 Route::get('boards/new', 'BoardController@new');        # New
 Route::post('boards/new', 'BoardController@create');	# Create
 
+# restful
+Route::resource('rest', 'RestappController');   # CRUD関係のアクセスを一括登録する
+Route::get('hello/rest', 'HelloController@rest');
+
+# session
+Route::get('hello/session', 'HelloController@session_get');
+Route::post('hello/session', 'HelloController@session_put');
+
+# paginate
+Route::get('hello/paginate', 'HelloController@paginate');
+
+#authenticate
+Route::get('hello/user', 'HelloController@user');
 
 # ===========================================================================
 
@@ -69,3 +82,7 @@ Route::post('practice', 'MyController@post');
 # Hello page '/hello'
 # Route::get('hello', 'HelloController@index');
 # Route::post('hello', 'HelloController@post');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

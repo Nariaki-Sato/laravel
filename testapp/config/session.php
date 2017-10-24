@@ -16,7 +16,9 @@ return [
     |
     */
 
-    'driver' => env('SESSION_DRIVER', 'file'),
+    # セッションの保存先をデータベースに変更する
+    // 'driver' => env('SESSION_DRIVER', 'file'),
+    'driver' => env('SESSION_DRIVER', 'database'),
 
     /*
     |--------------------------------------------------------------------------

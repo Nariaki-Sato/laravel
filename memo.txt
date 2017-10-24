@@ -79,3 +79,37 @@ Migrated:  2017_10_23_025814_create_stationery_table
 
 php artisan db:seed の前にDatabaseSeederに登録しておきましょう　
 
+=========================================
+
+【メモ5 Seeding の実行時のエラー】
+
+Class not found　はクラスをSeederファイルの上でuse宣言していないから
+
+=========================================
+
+【メモ6 redirect('')について 】
+
+redirectのurlは'/'から始める 例 redirect('/people')
+
+=========================================
+
+【メモ7 sessioinの保存先の変更 】
+
+/config/session.php
+    # セッションの保存先をデータベースに変更する
+    // 'driver' => env('SESSION_DRIVER', 'file'),
+    'driver' => env('SESSION_DRIVER', 'database'),
+
+.env
+変更前
+SESSION_DRIVER=file
+変更後
+SESSION_DRIVER=database
+
+
+
+
+
+
+
+
