@@ -1,6 +1,6 @@
 PHPフレームワーク Laravel入門 目次
 
-Chapter 1 Laravelを準備する
+- Chapter 1 Laravelを準備する
 
 1.1 PHPフレームワークとLaravel
     PHP開発の問題点
@@ -16,7 +16,7 @@ Chapter 1 Laravelを準備する
     XAMPPにデプロイする
     指定のアドレスで公開する
 
-Chapter 2 ルーティングとコントローラ
+- Chapter 2 ルーティングとコントローラ
 
 2.1 ルーティング
     アプリケーションの構成
@@ -40,7 +40,7 @@ Chapter 2 ルーティングとコントローラ
     リクエストとレスポンス
     RequestおよびResponse
 
-Chapter 3 ビューとテンプレート
+- Chapter 3 ビューとテンプレート
 
 3.1 PHPテンプレートの利用
     ビューについて
@@ -83,7 +83,7 @@ Chapter 3 ビューとテンプレート
     ビューコンポーザクラスの作成
 
 
-Chapter 4 リクエスト・レスポンスを補完する
+- Chapter 4 リクエスト・レスポンスを補完する
 
 4.1 ミドルウェアの利用
     ミドルウェアとは？
@@ -121,7 +121,7 @@ Chapter 4 リクエスト・レスポンスを補完する
     クッキーを読み書きする
     リダイレクトについて
 
-Chapter 5 データベースの利用
+- Chapter 5 データベースの利用
 
 5.1 データベースを準備する
     モデルとデータベース
@@ -170,7 +170,7 @@ Chapter 5 データベースの利用
     シーダーファイルの登録
     シーディングを実行する
 
-Chapter 6 Eloquent ORM
+- Chapter 6 Eloquent ORM
 
 6.1 Eloquentの基本
     ORMとは？
@@ -215,7 +215,7 @@ Chapter 6 Eloquent ORM
     関連レコードの有無
     withによるEagerローディング
 
-Chapter 7 RESTfulサービス/セッション/ペジネーション/認証/テスト
+- Chapter 7 RESTfulサービス/セッション/ペジネーション/認証/テスト
 
 7.1 リソースコントローラとRESTful
     RESTfulとは？
