@@ -16,9 +16,7 @@ return [
     |
     */
 
-    # セッションの保存先をデータベースに変更する
-    // 'driver' => env('SESSION_DRIVER', 'file'),
-    'driver' => env('SESSION_DRIVER', 'database'),
+    'driver' => env('SESSION_DRIVER', 'file'),
 
     /*
     |--------------------------------------------------------------------------
@@ -31,7 +29,7 @@ return [
     |
     */
 
-    'lifetime' => 120,
+    'lifetime' => env('SESSION_LIFETIME', 120),
 
     'expire_on_close' => false,
 

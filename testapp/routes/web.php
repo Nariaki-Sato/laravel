@@ -1,88 +1,16 @@
 <?php
 
-use App\Http\Middleware\MyMiddleware;
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
 
-# Top page /resources/views/welcome.blade.phpを表示
-Route::get('/', function () { return view('welcome'); });
-
-# ===========================================================================
-
-### Practice
-
-#user
-Route::get('user', 'UserController@index'); 			# Index
-Route::get('user/new', 'UserController@new');			# New
-Route::post('user/new', 'UserController@create');		# Create
-Route::get('user/edit', 'UserController@edit');			# Edit
-Route::post('user/edit', 'UserController@update');		# Update
-
-Route::get('user/show', 'UserController@show'); 		# Show
-Route::get('user/search', 'UserController@search'); 	# Search
-
-# people
-Route::get('people', 'PersonController@index'); 		    # Index
-Route::get('people/find', 'PersonController@find');		    # Find
-Route::post('people/find', 'PersonController@search');	    # Search
-Route::get('people/new', 'PersonController@new');		    # New
-Route::post('people/new', 'PersonController@create');	    # Create
-Route::get('people/edit', 'PersonController@edit');		    # Edit
-Route::post('people/edit', 'PersonController@update');	    # Update
-Route::get('people/delete', 'PersonController@delete');		# Delete
-Route::post('people/delete', 'PersonController@destroy');	# Destroy
-
-
-# boards
-
-Route::get('boards', 'BoardController@index'); 			# Index
-Route::get('boards/new', 'BoardController@new');        # New
-Route::post('boards/new', 'BoardController@create');	# Create
-
-# restful
-Route::resource('rest', 'RestappController');   # CRUD関係のアクセスを一括登録する
-Route::get('hello/rest', 'HelloController@rest');
-
-# session
-Route::get('hello/session', 'HelloController@session_get');
-Route::post('hello/session', 'HelloController@session_put');
-
-# paginate
-Route::get('hello/paginate', 'HelloController@paginate');
-
-#authenticate
-Route::get('hello/user', 'HelloController@user');
-
-# ===========================================================================
-
-# stationery
-Route::get('stationery', 'StationeryController@index'); 	# Index
-
-
-#database
-Route::get('practice', 'MyController@index');
-Route::get('practice/new', 'MyController@new');
-Route::post('practice/database', 'MyController@create');
-
-#cookie
-Route::get('practice/cookie', 'MyController@cookie');
-Route::post('practice/cookie', 'MyController@post_cookie');
-
-#child
-Route::get('practice/child', 'MyController@child')->middleware(MyMiddleware::class);
-
-#validation test
-Route::get('practice/validation', 'MyController@validation');
-Route::post('practice/validation', 'Mycontroller@post_validation');
-
-#basic
-Route::get('practice/{id?}', 'MyController@index');
-Route::post('practice', 'MyController@post');
-
-# ===========================================================================
-
-# Hello page '/hello'
-# Route::get('hello', 'HelloController@index');
-# Route::post('hello', 'HelloController@post');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', function () {
+    return view('welcome');
+});
