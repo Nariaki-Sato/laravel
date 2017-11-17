@@ -11,6 +11,15 @@
 |
 */
 
+/*
+ * Top page
+ */
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*
+ * Hello
+ */
+Route::get('hello', 'HelloController@index');
+Route::post('hello', 'HelloController@post');
